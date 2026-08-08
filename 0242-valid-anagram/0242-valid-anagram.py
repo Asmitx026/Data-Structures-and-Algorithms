@@ -13,7 +13,9 @@ class Solution(object):
         count = {}
 
         for char in s:
-            count[char] = 1 + count.get(char, 0)
+            if char not in count:
+                count[char] = 0
+            count[char] += 1
         
         for char in t:
             if char not in count:
