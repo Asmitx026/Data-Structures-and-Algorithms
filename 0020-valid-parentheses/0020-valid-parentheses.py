@@ -18,4 +18,4 @@ class Solution:
             else:
                 seen.append(char)
 
-        return len(seen) == 0
+        return not seen
