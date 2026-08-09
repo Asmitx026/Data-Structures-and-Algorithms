@@ -1,23 +1,21 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         '''
-        using Stack
+        using Stack and a HashMap of paranthesis
         '''
+
         seen = []
+        brackets = {
+            ')': '(',
+            '}': '{',
+            ']': '['
+        }
 
         for char in s:
-            if char == '(' or char == '{' or char == '[':
-                seen.append(char)
+            if char in brackets:
+                if len(seen) == 0 or seen.pop() != brackets[char]:
+                    return False
             else:
-                if len(seen) == 0:
-                    return False
+                seen.append(char)
 
-                top = seen.pop()
-                if char == ')' and top != '(':
-                    return False
-                elif char == '}' and top != '{':
-                    return False
-                elif char == ']' and top != '[':
-                    return False
-            
         return len(seen) == 0
