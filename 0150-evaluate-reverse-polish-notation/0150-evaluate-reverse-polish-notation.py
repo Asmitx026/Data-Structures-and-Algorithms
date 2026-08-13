@@ -1,8 +1,10 @@
+'''
 class DoublyLinkedList:
     def __init__(self, val=0, prev=None, next=None):
         self.val = val
         self.next = next
         self.prev = prev
+'''
 
 
 class Solution:
@@ -11,7 +13,7 @@ class Solution:
     Also possible via Linked-List and Recursion
     '''
 
-    '''
+    
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
         for token in tokens:
@@ -31,8 +33,13 @@ class Solution:
                 stack.append(int(token))
         
         return stack[-1]
+    
+
+    '''
+    Linked-List - Viable Approach but higher runtime and memory usage as compared to simple yet effective stack implementation
     '''
 
+    '''
     def evalRPN(self, tokens: List[str]) -> int:
         head = DoublyLinkedList(tokens[0])
         curr = head
@@ -65,3 +72,4 @@ class Solution:
             head = head.next
 
         return ans
+    '''
