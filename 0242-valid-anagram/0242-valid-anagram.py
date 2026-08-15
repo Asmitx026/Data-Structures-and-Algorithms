@@ -1,15 +1,11 @@
 class Solution(object):
-    def isAnagram(self, s, t):
+    def isAnagram(self, s: str, t: str) -> bool:
         """
-        via HashMap
-        :type s: str
-        :type t: str
-        :rtype: bool
+        HashMap approach, leads to O(n) time complexity
         """
         
         if len(s) != len(t):
             return False
-
         count = {}
 
         for char in s:
@@ -18,8 +14,8 @@ class Solution(object):
             count[char] += 1
         
         for char in t:
-            if char not in count:
+            if char not in count or count[char] == 0: # returns False if count of that char is already zero (since it'll then lead to negative int after decrement) or if char not a valid key
                 return False
             count[char] -= 1
         
-        return all(v == 0 for v in count.values())
+        return True
