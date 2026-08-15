@@ -3,7 +3,7 @@ class Solution(object):
         """
         HashMap approach, leads to O(n) time complexity
         """
-        
+
         if len(s) != len(t):
             return False
         count = {}
@@ -19,3 +19,14 @@ class Solution(object):
             count[char] -= 1
         
         return True
+
+        """
+        Simpler approach with array, but higher time complexity (O(nlogn))
+        """
+
+        """
+        s_lst = sorted(list(s))
+        t_lst = sorted(list(t))
+
+        return s_lst == t_lst
+        """
