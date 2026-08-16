@@ -8,8 +8,8 @@ class Solution:
             (logical way to 'Return the array `ans`' but takes auxillary space)
         '''
 
-        return nums+nums # most efficient way in terms of runtime and memory space
+        return nums*2 # most efficient way in terms of runtime and memory space
 
-        # return nums*2
+        # return nums+nums
         # nums.extend(nums); return nums
         # ans=nums.copy();for num in nums:;ans.append(num);return ans
